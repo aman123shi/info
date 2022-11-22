@@ -42,6 +42,18 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <button
+        routerLink="/review"
+        style="border-radius: 25px"
+        type="button"
+        class="btn btn-primary btn-lg w-4 mt-4 mb-3"
+      >
+        Next
+      </button>
+    </div>
+  </div>
   <p style="justify-content: center; font-size: large">
     Enter some personal Information for this family member
   </p>
@@ -149,7 +161,144 @@
             routerLink="/review"
             style="border-radius: 25px"
             type="button"
-            class="btn btn-secondary btn-rounded btn-lg w-5"
+            class="btn btn-secondary btn-rounded btn-lg w-4 mb-3"
+          >
+            Next
+          </button>
+        </div>
+        <div class="row g-3">
+          <div class="col">
+            <p style="justify-content: center; font-size: large">
+              Enter {{ userService.firstName }}'s Address
+            </p>
+            <div class="form-group">
+              <b for="ch"> ADDRESS</b> <br />
+              <div id="ch" class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  checked
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Same As Mine
+                </label>
+              </div>
+            </div>
+            <!-- address row  starts -->
+            <div class="row">
+              <div class="col">
+                <div
+                  id="pi"
+                  class="card cards card-2 text-center ml-0"
+                  style="width: 20rem"
+                >
+                  <div class="card-body">
+                    <div class="form-outline">
+                      <label id="form6Example1" class="ml-3"
+                        ><b>{{ userService.street }}</b></label
+                      >
+                    </div>
+                    <div class="form-outline">
+                      <label id="form6Example1" class="ml-6"
+                        ><b>{{ userService.street }} zip2345</b></label
+                      >
+                    </div>
+                    <div class="form-outline ml-4">
+                      <label id="form6Example1" class="ml-3"
+                        ><b>{{ userService.country }}</b></label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- address row  ends -->
+          </div>
+        </div>
+        <div class="col">
+          <button
+            routerLink="/review"
+            style="border-radius: 25px"
+            type="button"
+            class="btn btn-primary btn-lg w-4 mb-3"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <p style="justify-content: center; font-size: large">
+        (optional) Enter an Email Address or Phone Number for
+        {{ userService.firstName }}
+      </p>
+      <span style="color: gray" class="ml-5"
+        >we use this information to contact them if necessary</span
+      >
+      <div class="form-group mb-3" style="margin-left: 7%">
+        <div class="col-sm-6">
+          <div class="form-outline">
+            <label class="form-label mb-0" for="form10Example1"
+              ><b> Email</b></label
+            >
+            <input
+              [(ngModel)]="userService.email"
+              [ngModelOptions]="{ standalone: true }"
+              type="email"
+              id="form10Example1"
+              class="form-control mt-0"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-left: 7%">
+        <div class="col-sm-6">
+          <div class="form-outline">
+            <label class="form-label mb-0" for="form10Example1"
+              ><b>Confirm Email</b></label
+            >
+            <input type="email" id="form10Example1" class="form-control mt-0" />
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-left: 7%">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-outline">
+              <label class="form-label mb-0" for="form10Example1"
+                ><b>Phone</b></label
+              >
+              <input
+                type="text"
+                id="form10Example1"
+                class="form-control mt-0"
+                [(ngModel)]="userService.phone"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <p-dropdown
+              [options]="phoneType"
+              [(ngModel)]="userService.phoneType"
+              [ngModelOptions]="{ standalone: true }"
+              optionLabel="label"
+              optionValue="value"
+              [style]="{
+                'max-height': '37px',
+                'margin-left': '5px',
+                'margin-top': '23px',
+                'max-width': '10rem'
+              }"
+            ></p-dropdown>
+          </div>
+        </div>
+        <div class="col">
+          <button
+            routerLink="/review"
+            style="border-radius: 25px"
+            type="button"
+            class="btn btn-primary btn-lg w-4 mt-4 mb-3"
           >
             Next
           </button>

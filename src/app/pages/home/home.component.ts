@@ -7,14 +7,18 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  plans: Plan[] = [
+  plans: ComboType[] = [
     { label: 'self plus one', value: 'value1' },
     { label: 'plan 2', value: 'value2' },
     { label: 'plan 3', value: 'value3' },
   ];
-  relation: Plan[] = [
+  relation: ComboType[] = [
     { label: 'spouse', value: 'spouse' },
     { label: 'child', value: 'child' },
+  ];
+  phoneType: ComboType[] = [
+    { label: 'Cell', value: 'cell' },
+    { label: 'Desk', value: 'desk' },
   ];
   selectedPlan: string | undefined;
   selectedRelation: string | undefined;
@@ -23,7 +27,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
   onClick() {}
 }
-interface Plan {
+interface ComboType {
   label: string;
   value: string;
 }
