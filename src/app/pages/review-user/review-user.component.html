@@ -1,0 +1,124 @@
+<div class="container">
+  <div style="display: flex; justify-content: center"></div>
+  <p style="margin-left: 40%">
+    Review {{ userService.firstName }} {{ userService.lastName }}'s Information
+  </p>
+  <div class="row">
+    <div class="col">
+      <span for="pi" style="margin-left: 17%">PERSONAL INFORMATION</span>
+      <div id="pi" class="card cards card-2 text-center" style="width: 30rem">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ userService.firstName }} {{ userService.mi }}
+            {{ userService.lastName }} {{ userService.suffix }}
+          </h5>
+          <div class="form-outline">
+            <label
+              style="color: rgb(155, 149, 149)"
+              class="form-label"
+              for="form6Example1"
+              >RELATIONSHIP</label
+            >
+            <label id="form6Example1" class="ml-3"
+              ><b>{{ userService.relationships }}</b></label
+            >
+          </div>
+          <div class="form-outline">
+            <label
+              style="color: rgb(155, 149, 149)"
+              class="form-label"
+              for="form6Example1"
+              >GENDER</label
+            >
+            <label id="form6Example1" class="ml-6"
+              ><b>{{ userService.gender }}</b></label
+            >
+          </div>
+          <div class="form-outline ml-4">
+            <label
+              style="color: rgb(155, 149, 149)"
+              class="form-label"
+              for="form6Example1"
+              >DATE OF BIRTH</label
+            >
+            <label id="form6Example1" class="ml-3"
+              ><b>{{ "12/11/1999" }}</b></label
+            >
+          </div>
+          <a href="#" style="text-decoration: none" class="">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- address row  starts -->
+  <div class="row">
+    <div class="col">
+      <span for="pi" style="margin-left: 17%">ADDRESS</span>
+      <div id="pi" class="card cards card-2 text-center" style="width: 30rem">
+        <div class="card-body">
+          <div class="form-outline">
+            <label id="form6Example1" class="ml-3"><b>27 street NY</b></label>
+          </div>
+          <div class="form-outline">
+            <label id="form6Example1" class="ml-6"
+              ><b>New York 27 street zip2345</b></label
+            >
+          </div>
+          <div class="form-outline ml-4">
+            <label id="form6Example1" class="ml-3"
+              ><b>{{ "USA" }}</b></label
+            >
+          </div>
+          <a href="#" style="text-decoration: none" class="">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- address row  ends -->
+
+  <!-- contact information row starts  -->
+  <div class="row">
+    <div class="col">
+      <span for="pi" style="margin-left: 17%">CONTACT INFORMATION</span>
+      <div id="pi" class="card cards card-2 text-center" style="width: 30rem">
+        <div class="card-body">
+          <div class="form-outline">
+            <label
+              style="color: rgb(155, 149, 149)"
+              class="form-label"
+              for="form6Example1"
+              >EMAIL</label
+            >
+            <label id="form6Example1" class="ml-3"><b>adam@gmail.com</b></label>
+          </div>
+          <div class="form-outline ml-0">
+            <label
+              style="color: rgb(155, 149, 149)"
+              class="form-label"
+              for="form6Example1"
+              >Phone</label
+            >
+            <label id="form6Example1" class="ml-3"
+              ><b>+12354455699 | cell</b></label
+            >
+          </div>
+
+          <a href="#" style="text-decoration: none" class="">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- contact information row ends  -->
+  <div class="container row">
+    <div class="col">
+      <button
+        routerLink="/review"
+        style="border-radius: 25px; margin-left: 30%"
+        type="button"
+        class="btn btn-primary btn-rounded btn-lg w-5"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<div class="container">
+  <p style="justify-content: center; font-size: large; margin-top: 2rem">
+    Select The family member you want to include in this plan
+  </p>
+  <div style="background-color: rgb(226, 215, 215); width: 350px; height: 50px">
+    <span style="margin-left: 10px">PLAN TYPE</span>
+    <p-dropdown
+      [options]="plans"
+      [(ngModel)]="selectedPlan"
+      optionLabel="label"
+      optionValue="value"
+      [style]="{
+        'max-height': '40px',
+        'margin-left': '30px',
+        'margin-top': '5px',
+        background: 'rgb(226, 215, 215',
+        border: 'none'
+      }"
+    ></p-dropdown>
+  </div>
+
+  <div class="card border-0">
+    <div
+      class="flex flex-wrap md:justify-content-between justify-content-center card-container blue-container"
+    >
+      <div
+        class="border-dashed border-blue-500 w-16rem h-10rem m-2 surface-overlay flex-column font-bold align-items-center justify-content-center"
+      >
+        <button
+          pButton
+          type="button"
+          icon="pi pi-plus-circle"
+          iconPos="right"
+          style="font-size: 2rem; margin-left: 40%; margin-top: 15%"
+          class="p-button-outlined p-button-rounded p-button-icon p-button-primary"
+        ></button>
+        <div style="justify-content: center">
+          <span style="margin-left: 25%; margin-top: 5%" class="text-primary"
+            >add family member</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="justify-content: center; font-size: large">
+    Enter some personal Information for this family member
+  </p>
+  <div>
+    <form style="align-items: center">
+      <label style="align-items: center; margin-left: 15px" for="rtnbtn">
+        <b>RELATIONSHIP</b></label
+      >
+      <div class="wrap">
+        <button id="rtnbtn" type="button" class="button" (click)="(onClick)">
+          Spouse
+        </button>
+        <button
+          type="button"
+          class="button"
+          (click)="(onClick)"
+          style="margin-left: 10px"
+        >
+          Child
+        </button>
+      </div>
+      <div class="row g-3 container">
+        <div class="col-sm-3">
+          <div class="form-outline">
+            <label class="form-label" for="form10Example1"
+              ><b> First Name</b></label
+            >
+            <input
+              [(ngModel)]="userService.firstName"
+              [ngModelOptions]="{ standalone: true }"
+              type="text"
+              id="form10Example1"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-outline">
+            <label class="form-label" for="form10Example2"
+              ><b>MI(Optional)</b>
+            </label>
+            <input
+              type="text"
+              id="form10Example2"
+              class="form-control"
+              [(ngModel)]="userService.mi"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 container">
+        <div class="col-sm-3">
+          <div class="form-outline">
+            <label class="form-label" for="f1"><b> Last Name</b></label>
+            <input
+              type="text"
+              id="f1"
+              class="form-control"
+              [(ngModel)]="userService.lastName"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-outline">
+            <label class="form-label" for="f2"><b>SUFFIX(Optional)</b> </label>
+            <input
+              type="text"
+              id="f2"
+              class="form-control"
+              [(ngModel)]="userService.suffix"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+      </div>
+      <label style="align-items: center; margin-left: 15px" for="rtnbtn">
+        <b>GENDER</b></label
+      >
+      <div class="wrap">
+        <button id="rtnbtn" type="button" class="button" (click)="(onClick)">
+          MALE
+        </button>
+        <button
+          type="button"
+          class="button"
+          (click)="(onClick)"
+          style="margin-left: 10px"
+        >
+          FEMALE
+        </button>
+      </div>
+      <div class="container row">
+        <div class="col-sm-3">
+          <div class="form-outline">
+            <label class="form-label" for="f2"><b>Date OF BIRTH</b> </label>
+            <input type="date" id="f2" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="container row">
+        <div class="col">
+          <button
+            routerLink="/review"
+            style="border-radius: 25px"
+            type="button"
+            class="btn btn-secondary btn-rounded btn-lg w-5"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
